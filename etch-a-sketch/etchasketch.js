@@ -9,7 +9,6 @@ const modes = {
 };
 
 createGrid(size);
-mode.addEventListener("change", reset);
 
 function resize() {
     size = prompt("Enter a grid size ranging from 1-100");

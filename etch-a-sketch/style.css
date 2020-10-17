@@ -45,5 +45,5 @@ body {
 
 .square {
     background-color: white;
-    border: 1px dashed black;
+    border: 1px dashed rgba(0, 0, 0, 0.3);
 }
