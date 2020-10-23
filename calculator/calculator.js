@@ -22,6 +22,7 @@ function logClick(e) {
 }
 
 function logKey(e) {
+
     if (e.key === BUTTON_VALUE.EQUALS) { e.preventDefault(); }
     buttonAction(e.key);
 }
@@ -46,6 +47,7 @@ function buttonAction(buttonPressed) {
         case BUTTON_VALUE.SUBTRACT:
         case BUTTON_VALUE.MULTIPLY:
         case BUTTON_VALUE.DIVIDE:
+        case BUTTON_VALUE.DECIMAL:
             display.value = updateOperator(txt, buttonPressed);
             break;
         default:
