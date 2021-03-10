@@ -1,0 +1,98 @@
+body {
+    font-family: Roboto;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#main-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#main-nav {
+    width: 100%;
+    padding: 0 2em;
+}
+
+#main-nav .nav-left {
+    padding: 0;
+}
+
+#main-nav .nav-right {
+    float: right;
+}
+
+#main-nav ul {
+    display: inline-flex;
+    list-style-type: none;
+}
+
+#main-nav a {
+    display: inline-block;
+    padding: 0.5em;
+    color: rgb(70, 70, 70);
+    text-decoration: none;
+}
+
+#main-nav button {
+    color: white;
+    background-color: rgb(48, 119, 201);
+    font-weight: 600;
+    padding: 0.6em 1em;
+    outline: none;
+    border: 0;
+    margin: 0;
+}
+
+#main-nav button:active {
+    background-color: rgb(35, 94, 161);
+}
+
+main .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 379px;
+}
+
+main form .search-bar {
+    font-size: 16px;
+    border: 1px rgb(211, 211, 211) solid;
+    border-radius: 30px;
+    width: 32.8em;
+    height: 0.75em;
+    margin: 1.65em 0 1.2em 0;
+    outline: none;
+    padding: 1em 1em 1em 2em;
+}
+
+main form input[type=text]:hover, textarea:hover input[type=text]:active, textarea:active {
+    box-shadow: 0.5px 0.5px 6px -3px grey;
+}
+
+main .btn {
+    font-size: 14px;
+    color: rgb(92, 92, 92);
+    padding: 8px 16px;
+    margin: 11px 4px;
+    border: 1px transparent solid;
+    outline: none;
+}
+
+main .btn:hover {
+    border: 1px grey solid;
+    box-shadow: 0 0 6px -3px grey;
+}
+
+main .btn:active {
+    border: 1px rgb(48, 119, 201) solid;
+    box-shadow: 0 0 6px -3px rgb(48, 119, 201);
+}

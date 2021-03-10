@@ -1,0 +1,304 @@
+:root {
+    --bg-color: #f5f5f5;
+    --primary-color: #1e5e63;
+    --focus-color: #888;
+    --overlay-color: #000000ad;
+    --menu-speed: 0.75s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.container {
+    max-width: 1280px;
+    height: 100vh;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+form legend {
+    font-size: 1.5rem;
+}
+
+form label {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+form input[type=text] {
+    color: #000;
+    outline: none;
+    padding: 8px 5px;
+    width: 100%;
+}
+
+form input[type=text]:hover,
+form input[type=text]:focus {
+    border-color: var(--focus-color);
+    border-width: 2px;
+}
+
+form label:focus-within {
+    color: var(--focus-color);
+}
+
+.x-btn {
+    float: right;
+    line-height: 0.5;
+    color: var(--primary-color);
+    font-size: 28px;
+    font-weight: bold;
+}
+.x-btn:hover,
+.x-btn:focus {
+    color: var(--focus-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn {
+    box-sizing: border-box;
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+    padding: 12px 16px;
+    border: none;
+    outline: none;
+}
+
+.btn:hover,
+.btn:focus {
+    transition: background-color 0.5s ease;
+    background-color: var(--focus-color);
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+
+.modal {
+    position: fixed;
+    background-color: var(--overlay-color);
+    overflow: auto;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 5%;
+}
+
+.modal-content {
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 8px 0 var(--overlay-color);
+    max-width: 90vw;
+    width: 500px;
+    padding: 10px;
+    margin: auto;
+}
+
+main {
+    background-color: var(--bg-color);
+}
+
+.project {
+    color: var(--primary-color);
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 50px 20px;
+}
+
+.project h1 {
+    font-size: 2rem;
+}
+
+.task-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+    padding: 1px 8px;
+    border-top: 1px solid var(--primary-color);
+}
+
+.task-list li:hover {
+    background-color: #f3f3f3;
+}
+
+.task-list .task-content {
+    word-break: break-all;
+    width: 90%;
+}
+
+.task-list .completed {
+    color: var(--focus-color);
+    text-decoration: line-through;
+}
+
+.task-complete-btn {
+    background-color: rgb(155, 209, 105);
+    padding: 0.4rem 0.6rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.task-delete-btn {
+    background-color: rgb(206, 102, 88);
+    padding: 0.4rem 0.6rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.menu-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+}
+
+.menu-wrap .hamburger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-wrap .hamburger > div {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -8px;
+    width: 100%;
+    height: 2px;
+    background-color: inherit;
+}
+
+.menu-wrap .hamburger > div:after {
+    top: 8px;
+}
+
+.toggler:checked + .menu-wrap .hamburger > div {
+    transform: rotate(135deg);
+    background-color: var(--bg-color);
+}
+
+.toggler:checked + .menu-wrap .hamburger > div:before,
+.toggler:checked + .menu-wrap .hamburger > div:after {
+    top: 0;
+    transform: rotate(90deg);
+    background-color: var(--bg-color);
+}
+
+.toggler:checked:hover + .menu-wrap .hamburger > div {
+    transform: rotate(225deg);
+}
+
+.toggler:checked ~ .menu-wrap .menu {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.menu-wrap .menu {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-color);
+    overflow: hidden;
+    display: none;
+}
+
+.menu-wrap .menu > ul > li {
+    list-style: none;
+    color: var(--bg-color);
+    font-size: 1.5rem;
+}
+
+.menu-wrap .menu > ul > li > h1 {
+    padding-top: 25px;
+    font-size: 2rem;
+}
+
+.menu-wrap .menu > ul > li > a {
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .toggler:checked ~ .menu-wrap main {
+        margin-left: 270px;
+    }
+
+    .menu-wrap .menu {
+        width: 270px;
+    }
+
+    .project {
+        width: 100%;
+        height: 90vh;
+        border: 1px solid var(--primary-color);
+        margin-top: 5vh;
+        padding: 20px;
+    }
+}
+

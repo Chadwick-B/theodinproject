@@ -1,0 +1,49 @@
+html {
+    height: 100%;
+}
+body {
+    background: linear-gradient(35deg, rgb(244, 249, 253), rgb(242, 252, 250), rgb(246, 247, 255));
+    height: 100%;
+    font-family: Comfortaa;
+}
+
+.container {
+    background-color: white;
+    margin: auto;
+    width: 806px;
+    box-shadow: 5px 10px 18px #888888;
+    padding: 5px 20px 20px 20px;
+}
+
+.bottom-bar {
+    padding-top: 3px;
+}
+
+.btn {
+    background-color: rgb(67, 102, 155);
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+.dropdown-menu {
+    padding: 2px 0;
+}
+
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    height: 800px;
+    padding: 0;
+    margin: auto;
+    border: 3px solid black;
+}
+
+.square {
+    background-color: white;
+    border: 1px dashed rgba(0, 0, 0, 0.3);
+}

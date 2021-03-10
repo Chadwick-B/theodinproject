@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h3 class="center">Library</h3>
+        <div id="library" class="grid-container">
+            <button id="new-book-btn" type="button" class="grid-item-faded btn">+</button>
+        </div>
+    </div>
+    <template id="book-template">
+        <span class="grid-item">
+            <ul class="list center">
+                <li><span class="title"></span></li>
+                <li></li>
+                <li></li>
+                <select name="read" class="dropdown">
+                    <option value="read">Read</option>
+                    <option value="unread">Unread</option>
+                </select>
+                <button type="button" class="delete-btn btn bottom">Delete</button>
+            </ul>
+        </span>
+    </template>
+    <template id="new-book-template">
+        <span class="grid-item">
+            <ul class="list center">
+                <li><span class="title">New Book</span></li>
+                <li><p class="error-msg"></p></li>
+                <li><input type="text" placeholder="Title"></li>
+                <li><input type="text" placeholder="Author"></li>
+                <li><input type="text" placeholder="Pages"></li>
+                <li><label for="read">Read:</label><input type="checkbox" name="read"></li>
+                <li>
+                    <button type="submit" class="submit-btn btn">Add</button>
+                    <button type="button" class="cancel-btn btn">Cancel</button>
+                </li>
+            </ul>
+        </span>
+    </template>
+    <script src="library.js"></script>
+</body>
+</html>
