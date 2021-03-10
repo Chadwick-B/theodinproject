@@ -4,6 +4,6 @@ module.exports = {
     entry: './src/js/app.js',
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist/to-do-list'),
     }
 }
