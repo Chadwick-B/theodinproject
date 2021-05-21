@@ -1,0 +1,54 @@
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px;
+  border-bottom: 2px solid #fff;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar > form > input[type='text'] {
+  font-variant: normal;
+  flex-grow: 2;
+  font-size: 1.2em;
+  padding: 5px 5px 5px 30px;
+  width: 85%;
+  max-width: 250px;
+  outline: none;
+  border: 1px solid var(--light-midtone-color);
+  border-radius: 10px;
+}
+
+.search-bar > form > button {
+  color: var(--light-midtone-color);
+  background-color: transparent;
+  font-size: 1.2em;
+  position: relative;
+  left: 30px;
+  bottom: 2px;
+  border: 0;
+  cursor: pointer;
+}
+
+path {
+  fill: var(--light-color);
+  stroke: var(--dark-color);
+  stroke-width: 4;
+  stroke-linejoin: round;
+}
+
+path:hover {
+  stroke-width: 6;
+}
+
+@media only screen and (min-width: 600px) {
+  .nav-bar {
+    margin: auto;
+    max-width: 960px;
+  }
+}

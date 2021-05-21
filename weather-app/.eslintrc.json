@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": ["eslint:recommended", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "space-before-blocks": "error",
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "func-names": "off"
+  }
+}
