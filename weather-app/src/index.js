@@ -52,6 +52,6 @@ window.onload = () => {
   // Redirect to homepage
   const logo = document.querySelector('path');
   logo.onclick = function () {
-    document.location.href = '/weather-app/';
+    document.location.href = '/theodinproject/weather-app/';
   };
 };
