@@ -7,9 +7,9 @@ async function queryWeatherData(query, coords = false) {
   try {
     // Key only exposed in frontend for practicing purposes
     const key = 'e7aa7a6609b8b2795100d597605b657f';
-    let dataURL = `http://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${key}`;
+    let dataURL = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${key}`;
     if (coords) {
-      dataURL = `http://api.openweathermap.org/data/2.5/weather?lat=${query.latitude}&lon=${query.longitude}&appid=${key}`;
+      dataURL = `https://api.openweathermap.org/data/2.5/weather?lat=${query.latitude}&lon=${query.longitude}&appid=${key}`;
     }
 
     // Query data, convert to JSON
@@ -52,6 +52,6 @@ window.onload = () => {
   // Redirect to homepage
   const logo = document.querySelector('path');
   logo.onclick = function () {
-    document.location.href = '/weather-app/index.html';
+    document.location.href = '/weather-app/';
   };
 };
