@@ -52,6 +52,6 @@ window.onload = () => {
   // Redirect to homepage
   const logo = document.querySelector('path');
   logo.onclick = function () {
-    document.location.href = '/';
+    document.location.href = '/weather-app/index.html';
   };
 };
