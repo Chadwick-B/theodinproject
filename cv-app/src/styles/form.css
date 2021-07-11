@@ -1,0 +1,71 @@
+.cv-container {
+  max-width: 1280px;
+  margin: 12px auto;
+  padding: 0 30px;
+  justify-content: center;
+  gap: 50px;
+}
+
+.form-container {
+  width: 200px;
+}
+
+.form-container > input,
+.form-container > textarea,
+.form-container > .date-field > input[type='date'] {
+  margin-bottom: 15px;
+  padding: 5px;
+  outline: none;
+}
+
+.form-container > .date-field {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  column-gap: 10%;
+}
+
+.form-container > label,
+.form-container > div > label {
+  font-size: 14px;
+}
+
+.display-container {
+  width: 200px;
+  padding: 0;
+}
+
+.display-container > li {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: var(--accent-color);
+}
+
+.display-container > li > p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.display-empty .empty,
+.display-empty > div > .empty {
+  color: #eb5a4d;
+}
+
+input:invalid {
+  border: 2px solid #eb5a4d;
+}
+
+@media screen and (min-width: 320px) {
+  .form-container {
+    width: 320px;
+  }
+
+  .display-container {
+    width: 320px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .cv-container {
+    padding: 0;
+  }
+}
