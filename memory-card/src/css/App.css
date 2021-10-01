@@ -1,0 +1,42 @@
+.score-container {
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 18px;
+  padding: 20px 0;
+}
+
+.card-container {
+  background-color: #fff;
+  padding: 10px 5px;
+}
+
+.card-inner {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 5px;
+}
+
+.card-name {
+  color: var(--unfocused-color);
+}
+
+.card:hover .card-name {
+  color: var(--hovered-color);
+}
+
+@media only screen and (min-width: 600px) {
+  .score-container {
+    max-width: 540px;
+    margin: auto;
+  }
+
+  .card-inner {
+    max-width: 1080px;
+    gap: 15px;
+  }
+}

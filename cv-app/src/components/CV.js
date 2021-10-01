@@ -1,19 +1,19 @@
-import React, { Suspense } from 'react';
-import GeneralSection from './GeneralSection';
-import '../styles/form.css';
-
-const EducationSection = React.lazy(() => import('./EducationSection'));
-const PracticalSection = React.lazy(() => import('./PracticalSection'));
+import React from 'react';
+import General from './General';
+import Education from './Education';
+import Practical from './Practical';
+import '../styles/cv.css';
 
 const CV = () => {
   return (
-    <div className="flex wrap cv-container">
-      <GeneralSection />
-      <Suspense fallback={<div>...</div>}>
-        <EducationSection />
-        <PracticalSection />
-      </Suspense>
-    </div>
+    <>
+      <h2 className="text-center">CV Form</h2>
+      <div className="container">
+        <General />
+        <Education />
+        <Practical />
+      </div>
+    </>
   );
 };
 

@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0 10px;
+  gap: 50px;
+}
+
+.title {
+  border-bottom: 1px solid #fff;
+}
+
+.icon-group {
+  float: right;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+  gap: 5px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 8px 10px;
+  width: 100%;
+}
+
+.field[type='date'] {
+  width: 220px;
+}
+
+.date-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 100%;
+  max-width: 100px;
+}
+
+.btn[type='submit'] {
+  background-color: rgb(48, 133, 83);
+  max-width: initial;
+}
+
+.error {
+  background-color: var(--error-color);
+}
+
+@media screen and (min-width: 760px) {
+  .container {
+    max-width: 500px;
+  }
+}

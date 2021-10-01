@@ -1,9 +1,7 @@
-.f-small {
-  font-size: 14px;
-}
-
-.f-header {
-  font-size: 18px;
+.btn {
+  color: var(--main-color);
+  background-color: var(--accent-color);
+  padding: 12px 15px;
 }
 
 .flex {
@@ -14,40 +12,6 @@
   flex-direction: column;
 }
 
-.wrap {
-  flex-wrap: wrap;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.align-center {
-  align-items: center;
-}
-
 .text-center {
   text-align: center;
-}
-
-.btn {
-  color: var(--main-color);
-  background-color: var(--accent-color);
-  padding: 12px 15px;
-  border: none;
-  cursor: pointer;
-  border-radius: 20px;
-}
-
-.icon-group {
-  position: relative;
-  top: -10px;
-  right: -5px;
-  font-size: 20px;
-  text-align: right;
-  float: right;
-}
-
-.icon-btn {
-  cursor: pointer;
 }

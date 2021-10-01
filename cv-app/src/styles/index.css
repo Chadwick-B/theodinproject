@@ -2,6 +2,7 @@
   --main-color: #fff;
   --main-bg-color: #222;
   --accent-color: #398cd4;
+  --error-color: #ffa3a3;
 }
 
 * {
@@ -10,11 +11,8 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Mukta', sans-serif;
+  font-size: 18px;
   color: var(--main-color);
   background-color: var(--main-bg-color);
 }
@@ -24,10 +22,18 @@ code {
     monospace;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+}
+
 ul {
+  padding: 0;
+  margin: 0;
   list-style-type: none;
 }
 
-input:focus {
-  border: 2px solid var(--accent-color);
+h2,
+p {
+  margin: 0;
 }
