@@ -1,0 +1,22 @@
+.contact-view {
+  padding: 10px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.link {
+  stroke: #111;
+  fill: #fff;
+  stroke-width: 8;
+  width: 100px;
+  height: 100px;
+  transition: all 0.2s ease-in-out;
+}
+
+.link:hover {
+  transform: scale(1.1);
+}

@@ -1,0 +1,14 @@
+{
+  "hoodie_grey": {
+    "name": "Hoodie / Grey",
+    "price": "999.99"
+  },
+  "crewneck_black": {
+    "name": "Crewneck / Black",
+    "price": "540.00"
+  },
+  "sweatpants_black": {
+    "name": "Sweatpants / Black",
+    "price": "540.00"
+  }
+}

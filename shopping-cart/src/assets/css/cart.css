@@ -1,0 +1,88 @@
+.cart-btn {
+  background-color: transparent;
+  box-sizing: border-box;
+  height: 100%;
+  cursor: pointer;
+  border: none;
+}
+
+.cart-overlay {
+  position: fixed;
+}
+
+.cart-display {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  background-color: var(--main-bg-color);
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  color: var(--main-bg-color);
+  background-color: var(--main-color);
+  padding: 10px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.cart-item {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 10px;
+}
+
+.cart-btn-close {
+  font-size: 24px;
+  color: var(--main-bg-color);
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.cart-count {
+  position: absolute;
+  transform: translate(-60%, 60%);
+  color: var(--main-bg-color);
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+}
+
+@media only screen and (min-width: 600px) {
+  .cart-overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .cart-display {
+    width: 70vw;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .cart-overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .cart-display {
+    width: 30vw;
+  }
+}

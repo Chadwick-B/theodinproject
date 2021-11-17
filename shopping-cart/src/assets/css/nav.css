@@ -1,0 +1,27 @@
+header {
+  display: flex;
+  background-color: var(--main-bg-color);
+  position: sticky;
+  z-index: 9999;
+  border-bottom: 1px solid var(--main-color);
+}
+
+.logo {
+  font-size: 32px;
+  font-variant: small-caps;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-item {
+  color: var(--main-color);
+  padding: 0 20px;
+}
+
+.nav-item:hover {
+  background-color: var(--highlight-color);
+}

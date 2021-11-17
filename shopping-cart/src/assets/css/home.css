@@ -1,0 +1,15 @@
+.two-panel {
+  display: grid;
+  grid-template-columns: repeat(2, 0.5fr);
+  max-height: 650px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-img {
+  filter: grayscale(100%);
+}
+
+.home-img:hover {
+  filter: grayscale(0%);
+}

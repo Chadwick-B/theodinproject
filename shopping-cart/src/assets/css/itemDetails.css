@@ -1,0 +1,19 @@
+.details-view {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.details-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 600px) {
+  .details-view {
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+}
