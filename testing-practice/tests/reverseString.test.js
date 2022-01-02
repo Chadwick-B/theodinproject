@@ -1,4 +1,4 @@
-import reverseString from './reverseString';
+import reverseString from '../src/reverseString';
 
 test('Reverse beep to peeb', () => {
   expect(reverseString('beep')).toBe('peeb');
