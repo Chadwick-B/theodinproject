@@ -1,0 +1,87 @@
+body {
+  font-family: 'Karla', sans-serif;
+  color: #fff;
+  background-color: #333;
+}
+
+a {
+  color: rgb(100, 115, 255);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+}
+
+.Title {
+  text-align: center;
+}
+
+.Gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.Gallery img {
+  object-fit: cover;
+  max-width: 200px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #000;
+  box-sizing: border-box;
+}
+
+.Overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.4s ease;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.Gallery a {
+  position: relative;
+}
+
+.Gallery a:hover .Overlay {
+  opacity: 1;
+}
+
+.OverlayText {
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 600px) {
+  .Container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .Title {
+    text-align: left;
+  }
+
+  .Gallery {
+    justify-content: left;
+  }
+
+  .Gallery img {
+    max-width: 250px;
+  }
+}
