@@ -1,0 +1,62 @@
+:root {
+  --primary-color: #333;
+  --unfocused-color: #bbb;
+  --secondary-color: #fff;
+  --red: rgb(200, 75, 75);
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+  background: linear-gradient(220.55deg, #fff6eb 0%, #dfd1c5 100%);
+}
+
+.Title {
+  font-size: 24px;
+  padding: 12px 0;
+}
+
+.Subtitle {
+  font-size: 18px;
+  padding: 5px 0;
+}
+
+.Center {
+  text-align: center;
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (min-width: 780px) {
+  .Container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .Container {
+    gap: 40px;
+  }
+
+  .Title {
+    font-size: 36px;
+    padding: 20px 0;
+  }
+
+  .Subtitle {
+    font-size: 24px;
+  }
+}
