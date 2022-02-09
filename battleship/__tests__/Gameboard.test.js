@@ -4,7 +4,7 @@ import Ship from '../src/factories/Ship';
 describe('Gameboard functions', () => {
   let board;
   beforeEach(() => {
-    board = Gameboard();
+    board = Gameboard(8, 8);
   });
 
   test('Place valid ships', () => {

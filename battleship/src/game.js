@@ -4,66 +4,51 @@ import Types from './data/types';
 import UI from './ui';
 
 const game = (() => {
-  const user = Player('User');
-  const AI = Player('Bot');
+  const user = Player('Player');
+  const AI = Player('AI');
 
-  const userBoard = Gameboard();
-  const AIBoard = Gameboard();
+  const userBoard = Gameboard(10, 10);
+  const AIBoard = Gameboard(10, 10);
 
-  // maybe structure stuff like this...
-  const StartPregame = () => {};
-  const SetPlayerTurn = () => {};
+  AIBoard.placeRandomizedShips();
+  let winner = '';
+  let lastState = -1;
+  let state = 0;
 
-  /* Test stuff */
-  const targetContainer = document.getElementById('battleship');
-  const modal = UI.createModal();
-  const placementGrid = UI.createGrid(0);
-  let isHorizontal = true;
-  let size = Types[0].size;
-
-  const handleTileEnter = (x, y) => {
-    const vecs = [];
-    for (let i = 0; i < size; i++) {
-      const vec = isHorizontal ? { x: x + i, y } : { x, y: y + i };
-      vecs.push(vec);
-    }
-
-    UI.setPlacingTiles(placementGrid, vecs);
-  };
-
-  const handleTileLeave = () => UI.clearPlacingTiles(placementGrid);
-
-  const handleTileClick = (x, y) => {
-    const vecs = [];
-    for (let i = 0; i < size; i++) {
-      const vec = isHorizontal ? { x: x + i, y } : { x, y: y + i };
-      vecs.push(vec);
-    }
-
-    if (userBoard.placeShip(vecs)) UI.setShipTiles(placementGrid, vecs);
-  };
-
-  const handleSubmitPlacements = () => {
-    const isFinishedPlacing = userBoard.getShips().length >= Types.length;
-    // could try adding a removeTileListeners(grid, evt, callback) function to UI
-    // then removing them all before setting innerHTML to ''; ?? but might be fine
-    // might also have to delete
-    if (isFinishedPlacing) {
-      //delete placementGrid;
-      //delete modal;
-      targetContainer.innerHTML = '';
-    } else {
-      // show error under button
+  const handleStartGame = () => (state = 1);
+  const handleCheckEnd = () => {
+    if (AIBoard.isShipsSunk()) {
+      winner = user.getData().name;
+      state = 2;
+    } else if (userBoard.isShipsSunk()) {
+      winner = AI.getData().name;
+      state = 2;
     }
   };
 
-  UI.addTileListeners(placementGrid, 'mouseenter', handleTileEnter);
-  UI.addTileListeners(placementGrid, 'mouseleave', handleTileLeave);
-  UI.addTileListeners(placementGrid, 'click', handleTileClick);
+  const step = () => {
+    if (lastState !== state) {
+      switch (state) {
+        case 0:
+          UI.renderPrep(Types, userBoard, handleStartGame);
+          break;
+        case 1:
+          UI.renderGame(user, AI, userBoard, AIBoard, handleCheckEnd);
+          break;
+        case 2:
+          UI.renderEnd(winner);
+          break;
+        default:
+          break;
+      }
 
-  // add a button to submit placed ships, attach button to handleSubmitPlacements
-  modal.appendChild(placementGrid);
-  targetContainer.appendChild(modal);
+      lastState = state;
+    }
+
+    window.requestAnimationFrame(step);
+  };
+
+  window.requestAnimationFrame(step);
 })();
 
 export default game;

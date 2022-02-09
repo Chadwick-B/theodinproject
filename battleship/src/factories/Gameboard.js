@@ -1,9 +1,21 @@
 import Types from '../data/types';
 import Ship from './Ship';
 
-const Gameboard = () => {
+const Gameboard = (w, h) => {
   const ships = [];
   const missedAttacks = [];
+
+  const getShips = () => {
+    return ships;
+  };
+
+  const getWidth = () => {
+    return w;
+  };
+
+  const getHeight = () => {
+    return h;
+  };
 
   const isPlaceable = (vecs) => {
     for (const vec of vecs) {
@@ -15,15 +27,11 @@ const Gameboard = () => {
         if (isColliding) return false;
       }
 
-      if (vec.x >= 8 || vec.x < 0) return false;
-      if (vec.y >= 8 || vec.y < 0) return false;
+      if (vec.x > w - 1 || vec.x < 0) return false;
+      if (vec.y > h - 1 || vec.y < 0) return false;
     }
 
     return true;
-  };
-
-  const getShips = () => {
-    return ships;
   };
 
   const placeShip = (vecs) => {
@@ -34,32 +42,43 @@ const Gameboard = () => {
     return false;
   };
 
-  // this function is coded pretty ugly and could be significantly more performant
-  // but it seems to run consistently well regardless
+  // Containing all AI logic to a single function within a generalized player/nonplayer board factory is bad
+  // Would be better to refactor this into a class, then extend shared functions to separated Player / AI board classes
+  // Maybe make this function just place one randomized ship
   const placeRandomizedShips = () => {
-    if (ships.length == 0) {
-      for (const type of Types) {
-        let isPlaced = false;
-        while (!isPlaced) {
-          const vecs = [];
-          const isHorizontal = Math.random() < 0.5;
+    const amountToPlace = Types.length - getShips().length;
+    const possibleVecs = [];
 
-          for (let i = 0; i < type.size; i++) {
-            if (i === 0) {
-              vecs.push({
-                x: Math.floor(Math.random() * 8),
-                y: Math.floor(Math.random() * 8),
-              });
-            } else {
-              if (isHorizontal) {
-                vecs.push({ x: vecs[0].x + i, y: vecs[0].y });
-              } else {
-                vecs.push({ x: vecs[0].x, y: vecs[0].y + i });
-              }
-            }
+    if (amountToPlace > 0) {
+      for (let x = 0; x < w; x++) {
+        for (let y = 0; y < h; y++) {
+          possibleVecs.push({ x: x, y: y });
+        }
+      }
+
+      for (let i = amountToPlace - 1; i >= 0; i--) {
+        const currentShip = Types[i];
+
+        for (let j = 0; j < possibleVecs.length; j++) {
+          const vVecs = [];
+          const hVecs = [];
+
+          const index = Math.floor(Math.random() * possibleVecs.length);
+          const vec = possibleVecs.splice(index, 1)[0];
+          const preferHorizontal = Math.random() < 0.5;
+
+          for (let k = 0; k < currentShip.size; k++) {
+            hVecs.push({ x: vec.x + k, y: vec.y });
+            vVecs.push({ x: vec.x, y: vec.y + k });
           }
 
-          isPlaced = placeShip(vecs);
+          if (preferHorizontal) {
+            if (placeShip(hVecs)) break;
+            if (placeShip(vVecs)) break;
+          } else {
+            if (placeShip(vVecs)) break;
+            if (placeShip(hVecs)) break;
+          }
         }
       }
     }
@@ -83,6 +102,8 @@ const Gameboard = () => {
 
   return {
     getShips,
+    getWidth,
+    getHeight,
     placeShip,
     placeRandomizedShips,
     receiveAttack,

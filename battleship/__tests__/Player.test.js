@@ -4,11 +4,23 @@ import Player from '../src/factories/Player';
 describe('Player functions', () => {
   let board, player;
   beforeEach(() => {
-    board = Gameboard();
+    board = Gameboard(8, 8);
     player = Player('Player 1');
   });
 
-  test('Attack board registered in data', () => {
+  test('Attacking board returns attack data', () => {
+    board.placeShip([
+      { x: 0, y: 5 },
+      { x: 1, y: 5 },
+    ]);
+
+    expect(player.attackBoard(board, 0, 5)).toEqual({
+      hit: true,
+      vec: { x: 0, y: 5 },
+    });
+  });
+
+  test('Attacking board shows proper history', () => {
     board.placeShip([
       { x: 0, y: 5 },
       { x: 1, y: 5 },
@@ -30,11 +42,11 @@ describe('Player functions', () => {
 
   test('Invalid attack when attacking same position', () => {
     player.attackBoard(board, 0, 5);
-    expect(player.attackBoard(board, 0, 5)).toBe(false);
+    expect(player.attackBoard(board, 0, 5)).toBe(null);
   });
 
   test('AI Attack board', () => {
-    player.AIAttack(board);
+    expect(player.AIAttack(board)).not.toBeNull();
     player.AIAttack(board);
 
     const data = player.getData();
