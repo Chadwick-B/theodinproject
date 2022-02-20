@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sign-up Form</title>
+  </head>
+  <body>
+    <div class="Container">
+      <div class="Image__Container">
+        <div class="Image__Overlay">
+          <img src="./logo.svg" alt="Logo" class="Logo" />
+          <div class="Credit">
+            <a href="https://iconscout.com/icons/languages" target="_blank"
+              >Languages Icon</a
+            >
+            by
+            <a
+              href="https://iconscout.com/contributors/iconscout"
+              target="_blank"
+              >Iconscout Store</a
+            >
+          </div>
+        </div>
+        <div class="Credit">
+          Photo by
+          <a
+            href="https://unsplash.com/@thkelley?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            >Thomas Kelley</a
+          >
+          on
+          <a
+            href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            >Unsplash</a
+          >
+        </div>
+      </div>
+      <main class="Main">
+        <header class="Header">
+          <div class="Header__Text">
+            This is not a real online service! You know you need something like
+            this in your life to help you realize your deepest dreams. Sign up
+            <i>now</i> to get started.
+            <br />
+            <br />
+            You <i>know</i> you want to.
+          </div>
+        </header>
+        <div class="Form__Container">
+          <h1 class="Form__Header">Let's do this!</h1>
+          <form action="" class="Form">
+            <div class="Form__Field">
+              <label for="firstName">First Name</label>
+              <input type="text" name="firstName" />
+            </div>
+            <div class="Form__Field">
+              <label for="lastName">Last Name</label>
+              <input type="text" name="lastName" />
+            </div>
+            <div class="Form__Field">
+              <label for="email">Email</label>
+              <input type="email" name="email" />
+            </div>
+            <div class="Form__Field">
+              <label for="phoneNumber">Phone Number</label>
+              <input
+                type="tel"
+                name="phoneNumber"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              />
+            </div>
+            <div class="Form__Field">
+              <label for="password">Password</label>
+              <input id="pw" type="password" name="password" required />
+              <div></div>
+            </div>
+            <div class="Form__Field">
+              <label for="confirmPassword">Confirm Password</label>
+              <input
+                id="confirm"
+                type="password"
+                name="confirmPassword"
+                required
+              />
+              <div></div>
+            </div>
+          </form>
+        </div>
+        <footer class="Footer">
+          <button type="button" class="Footer__Button">Create Account</button>
+          <div class="Footer__Text">
+            Already have an account? <a href="">Log in</a>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
