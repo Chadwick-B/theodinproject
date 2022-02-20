@@ -1,0 +1,35 @@
+:root {
+  --background: #fff;
+  --background-shade-light: #f5f5f5;
+  --background-shade: #ddd;
+  --text-color: #333;
+  --focus-color: rgb(36, 93, 180);
+  --accent-color: rgb(63, 150, 99);
+  --error-color: rgb(187, 83, 83);
+  --theme-name: 'light';
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #333;
+    --background-shade-light: #222;
+    --background-shade: #111;
+    --text-color: #fff;
+    --focus-color: rgb(36, 93, 180);
+    --accent-color: rgb(79, 167, 116);
+    --error-color: rgb(187, 83, 83);
+    --theme-name: 'dark';
+  }
+}
+
+/*
+
+Option with class to allow toggle instead of user setting
+
+:root.light {
+}
+
+:root.dark {
+}
+
+*/

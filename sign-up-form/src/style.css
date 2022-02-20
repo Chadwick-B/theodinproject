@@ -1,0 +1,183 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: var(--text-color);
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--background-shade-light);
+}
+
+i {
+  font-style: italic;
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.Image__Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url('./assets/image-sidebar.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.Image__Overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.Logo {
+  width: 100px;
+}
+
+.Credit {
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px #000;
+  font-size: 1rem;
+  padding: 10px 0;
+}
+
+.Credit a {
+  color: #fff;
+}
+
+.Main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.Main > * {
+  padding: 20px 30px;
+}
+
+.Header {
+  display: flex;
+  align-items: flex-end;
+}
+
+.Header__Text {
+  padding-bottom: 40px;
+}
+
+.Form__Container {
+  background-color: var(--background);
+  box-shadow: 10px 8px 10px 0 var(--background-shade);
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Form__Header {
+  padding-bottom: 20px;
+}
+
+.Form__Field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.Form__Field > label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.Form__Field > input {
+  font-size: 1rem;
+  border: 1px solid var(--background-shade);
+  border-radius: 4px;
+  padding: 8px 10px;
+  outline: none;
+}
+
+.Form__Field > input:focus {
+  border: 2px solid var(--focus-color);
+  margin: -1px;
+  box-shadow: 0 3px 12px 0 var(--background-shade);
+}
+
+.Form__Field > .Error:first-of-type {
+  border: 2px solid var(--error-color);
+  margin: -1px;
+}
+
+.Form__Field > .Error + div::after {
+  content: '* Passwords do not match';
+  color: var(--error-color);
+  font-size: 0.8rem;
+  vertical-align: top;
+  position: absolute;
+}
+
+.Footer {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Footer__Button {
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 40px;
+}
+
+.Footer__Text {
+  padding-top: 30px;
+}
+
+.Footer__Text a {
+  color: var(--accent-color);
+}
+
+@media screen and (min-width: 550px) {
+  .Form {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+  }
+}
+
+@media screen and (min-width: 890px) {
+  .Container {
+    display: grid;
+    grid-template-columns: 0.35fr 0.65fr;
+  }
+
+  .Image__Overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-top: 10px;
+    position: relative;
+    top: 20%;
+  }
+
+  .Main > * {
+    padding: 30px 50px;
+  }
+
+  .Form {
+    max-width: 60%;
+  }
+
+  .Footer {
+    align-items: flex-start;
+  }
+}
