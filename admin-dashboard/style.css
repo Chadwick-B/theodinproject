@@ -1,0 +1,116 @@
+.Container {
+  display: grid;
+  grid-template-columns: 0.3fr auto;
+  grid-template-rows: 0.15fr auto;
+  height: 100%;
+}
+
+.Sidebar {
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-sidebar);
+  background-color: var(--accent);
+  gap: 40px;
+  padding: 20px 10px;
+  z-index: 2;
+}
+
+.Sidebar > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Sidebar > ul > li {
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.Header {
+  display: grid;
+  grid-template-columns: auto fit-content(100%);
+  grid-template-rows: fit-content(100%) auto;
+  background-color: var(--bg-header);
+  box-shadow: 2px 2px 8px 2px var(--shadow);
+  padding: 5px 40px 15px 40px;
+  gap: 10px 20px;
+  z-index: 1;
+}
+
+.Header > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.Header > div:nth-child(even) {
+  justify-self: flex-end;
+}
+
+.Content {
+  display: grid;
+  grid-template-columns: 0.75fr 0.25fr;
+  grid-template-rows: 0.5fr auto;
+  background-color: var(--bg-content);
+  padding: 30px;
+  gap: 20px;
+}
+
+.Content__Container {
+  display: grid;
+  grid-template-rows: fit-content(100%) auto;
+}
+
+.Content > div:first-child {
+  grid-row: 1 / 3;
+}
+
+.Content__Projects {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  grid-template-rows: auto auto auto;
+  gap: 25px;
+}
+
+.Content__Projects > .Card {
+  display: flex;
+  flex-direction: column;
+  border-left: 5px solid var(--highlight);
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.Btn__Group {
+  display: flex;
+  justify-content: right;
+  gap: 10px;
+}
+
+.Content__Announcements {
+  display: grid;
+  grid-template-rows: auto auto auto;
+}
+
+.Content__Announcements > div {
+  padding: 5px;
+}
+
+.Content__Announcements > div:not(:first-child) {
+  border-top: 1px solid var(--bg-content);
+}
+
+.Content__Trending {
+  display: grid;
+  grid-template-columns: fit-content(100%) auto;
+  grid-auto-rows: fit-content(100%);
+  gap: 10px;
+}
+
+.SideText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
