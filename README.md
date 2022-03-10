@@ -1,9 +1,10 @@
 Hello! This is a collection of my submissions following TheOdinProject starting from (nearly) the beginning.
 
-### **Most Noteworthy**
+### **Recent/Noteworthy**
 
-- [Shopping Cart](https://chadwick-b.github.io/theodinproject/shopping-cart/) - Mainly focused on making use of React state management and react-router-dom
-- [Sign-up Page](https://chadwick-b.github.io/theodinproject/sign-up-form/) - Mainly focused on a nice responsive front-end
+- [Shopping Cart](https://chadwick-b.github.io/theodinproject/shopping-cart/) - React state management and routing
+- [Sign-up Page](https://chadwick-b.github.io/theodinproject/sign-up-form/) - HTML/CSS responsive front-end focused more on design
+- [Admin Dashboard](https://chadwick-b.github.io/theodinproject/admin-dashboard/) - HTML/CSS with complex grid layouts
 
 ### Foundations (Beginning - Basic HTML/CSS/JS)
 
@@ -14,6 +15,7 @@ Hello! This is a collection of my submissions following TheOdinProject starting 
 ### Intermediate HTML/CSS
 
 - [Sign-up Page](https://chadwick-b.github.io/theodinproject/sign-up-form/)
+- [Admin Dashboard](https://chadwick-b.github.io/theodinproject/admin-dashboard/)
 
 ### Javascript (Introducing JS patterns and common tools such as Jest/Webpack)
 
